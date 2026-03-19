@@ -1,0 +1,92 @@
+<!-- ================= NAVBAR ================= -->
+<nav id="navbar"
+    class="fixed w-full z-50 bg-black/70 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20 transition-all duration-300">
+
+        <!-- Logo -->
+        <h1 class="text-xl font-bold uppercase">Adhinan Salam</h1>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex gap-8 text-sm">
+            <a href="#about" class="hover:text-gray-400 transition">About</a>
+            <a href="#ventures" class="hover:text-gray-400 transition">Ventures</a>
+            <a href="#group" class="hover:text-gray-400 transition">Mark Group</a>
+            <a href="#achievements" class="hover:text-gray-400 transition">Achievements</a>
+            <a href="#contact" class="hover:text-gray-400 transition">Contact</a>
+        </div>
+
+        <!-- Hamburger -->
+        <button id="menu-btn" class="md:hidden text-xl">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="md:hidden max-h-0 overflow-hidden transition-all duration-500 bg-black border-t border-white/10">
+
+        <div class="flex flex-col px-6 py-4 space-y-4 text-sm">
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#ventures" class="mobile-link">Ventures</a>
+            <a href="#group" class="mobile-link">Mark Group</a>
+            <a href="#achievements" class="mobile-link">Achievements</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const links = document.querySelectorAll(".mobile-link");
+
+    let isOpen = false;
+
+    menuBtn.addEventListener("click", () => {
+        isOpen = !isOpen;
+
+        if (isOpen) {
+            mobileMenu.style.maxHeight = "300px";
+            menuBtn.innerHTML = '<i class="fa fa-times"></i>';
+        } else {
+            mobileMenu.style.maxHeight = "0px";
+            menuBtn.innerHTML = '<i class="fa fa-bars"></i>';
+        }
+    });
+
+    // Close menu when clicking link
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.style.maxHeight = "0px";
+            menuBtn.innerHTML = '<i class="fa fa-bars"></i>';
+            isOpen = false;
+        });
+    });
+
+    // Shrink navbar on scroll
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add("py-2");
+            navbar.classList.remove("py-4");
+        } else {
+            navbar.classList.add("py-4");
+            navbar.classList.remove("py-2");
+        }
+    });
+</script>
+
+<!-- ================= EXTRA STYLES ================= -->
+<style>
+    .mobile-link {
+        color: #9ca3af;
+        transition: 0.3s;
+    }
+
+    .mobile-link:hover {
+        color: white;
+    }
+</style>

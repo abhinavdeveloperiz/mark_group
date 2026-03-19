@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhinan Salam | Portfolio</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body,
+        html {
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3 {
+
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-800 text-white font-sans overflow-x-hidden">
+
+    {% include "navbar.html" %}
+
+
+
+    <!-- ================= HERO ================= -->
+    <section class="relative h-screen flex items-center justify-center text-center px-6 overflow-hidden">
+
+        <!-- Background Image with Zoom Animation -->
+        <div class="absolute inset-0">
+            <img src="https://img.freepik.com/free-photo/cheerful-young-caucasian-businessman_171337-727.jpg"
+                alt="Banner" class="w-full h-full object-cover animate-zoom" />
+        </div>
+
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90"></div>
+
+        <!-- Content -->
+        <div class="relative z-10" data-aos="fade-up" data-aos-delay="200">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-wide uppercase">
+                Adhinan Salam
+            </h1>
+
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                Entrepreneur • Managing Partner • Investor in Retail, Hospitality & Lifestyle Sectors
+            </p>
+
+            <!-- CTA Button (optional but premium feel) -->
+            <div class="mt-8">
+                <a href="#about"
+                    class="border border-white px-6 py-3 text-sm hover:bg-white hover:text-black transition duration-300 rounded-3xl uppercase">
+                    Explore Profile
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fa fa-angle-down text-2xl"></i>
+        </div>
+
+    </section>
+
+    <!-- ================= CUSTOM ANIMATION ================= -->
+    <style>
+        @keyframes zoomEffect {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.15);
+            }
+        }
+
+        .animate-zoom {
+            animation: zoomEffect 20s ease-in-out infinite alternate;
+        }
+    </style>
+
+
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+            <!-- Image Side -->
+            <div data-aos="fade-right" class="relative">
+                <img src="https://png.pngtree.com/png-vector/20230918/ourmid/pngtree-man-in-shirt-smiles-and-gives-thumbs-up-to-show-approval-png-image_10094381.png"
+                    class="w-full h-[450px] object-cover rounded-2xl object-top" alt="Adhinan Salam" />
+
+                <!-- Floating Card -->
+                <div class="absolute bottom-6 left-6 bg-black/80 border border-white/10 p-4 rounded-xl backdrop-blur-md"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <p class="text-sm text-gray-300">15+ Years Experience</p>
+                </div>
+            </div>
+
+            <!-- Content Side -->
+            <div data-aos="fade-left">
+
+                <h2 class="text-4xl font-bold mb-6 leading-tight">
+                    Building Scalable Ventures Across Industries
+                </h2>
+
+                <p class="text-gray-400 leading-relaxed mb-6 text-justify">
+                    Adhinan Salam, an MBA postgraduate in Human Resources, is a Kerala-based entrepreneur with
+                    diversified
+                    business interests spanning retail, hospitality, and lifestyle sectors.
+                </p>
+
+                <p class="text-gray-400 leading-relaxed mb-8 text-justify">
+                    He is the proprietor of Capital Ventures and Azaa Ventures and a partner in Yfoods Global LLP.
+                    Additionally, he serves as a Managing Partner of Mark Group, a diversified business group with over
+                    six
+                    decades of legacy.
+                </p>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 gap-6">
+
+                    <div class="border border-white/10 p-5 rounded-xl text-center hover:bg-white hover:text-black transition duration-300"
+                        data-aos="zoom-in">
+                        <h3 class="text-2xl font-bold">6+</h3>
+                        <p class="text-sm text-gray-400">Business Ventures</p>
+                    </div>
+
+                    <div class="border border-white/10 p-5 rounded-xl text-center hover:bg-white hover:text-black transition duration-300"
+                        data-aos="zoom-in" data-aos-delay="150">
+                        <h3 class="text-2xl font-bold">60+</h3>
+                        <p class="text-sm text-gray-400">Years Legacy</p>
+                    </div>
+
+                    <div class="border border-white/10 p-5 rounded-xl text-center hover:bg-white hover:text-black transition duration-300"
+                        data-aos="zoom-in" data-aos-delay="300">
+                        <h3 class="text-2xl font-bold">3+</h3>
+                        <p class="text-sm text-gray-400">Industries</p>
+                    </div>
+
+                    <div class="border border-white/10 p-5 rounded-xl text-center hover:bg-white hover:text-black transition duration-300"
+                        data-aos="zoom-in" data-aos-delay="450">
+                        <h3 class="text-2xl font-bold">Pan India</h3>
+                        <p class="text-sm text-gray-400">Expansion Vision</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+    <!-- ================= VENTURES ================= -->
+    <section id="ventures" class="relative py-28 px-6 text-white overflow-hidden">
+
+        <!-- Background -->
+        <div class="absolute inset-0 bg-center bg-cover bg-fixed"
+            style="background-image: url('https://www.shutterstock.com/image-photo/analysis-finance-grow-graph-market-600nw-2478761707.jpg');">
+        </div>
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/70"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto">
+
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center tracking-wide" data-aos="fade-up">
+                Business Ventures
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-10">
+
+                <!-- Card -->
+                <div data-aos="zoom-in"
+                    class="group rounded-2xl overflow-hidden bg-white/5 backdrop-blur-lg border border-white/10 hover:bg-white transition duration-500">
+
+                    <!-- BIG IMAGE -->
+                    <div class="h-56 bg-white flex items-center justify-center overflow-hidden ">
+                        <img src="https://cdn.cookielaw.org/logos/396992c7-1022-4c36-82e8-f180e6324448/0196f248-6fbc-79b9-9406-ed469b98d263/93529cb0-324c-41df-8473-e582e23719d6/FI3618_Zudio_Beauty_Logo_Adapts_20x10in_copy.jpg"
+                            class="h-full object-contain transition duration-500 group-hover:scale-110">
+                    </div>
+
+                    <!-- CONTENT -->
+                    <div class="p-6 text-center group-hover:text-black">
+                        <h3 class="text-2xl font-semibold mb-4">Capital Ventures</h3>
+
+                        <ul class="space-y-2 text-gray-300 group-hover:text-black">
+                            <li>Zudio – Edapally, Kochi (2024)</li>
+                            <li>Zudio – Changaramkulam (2023)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card -->
+                <div data-aos="zoom-in"
+                    class="group rounded-2xl overflow-hidden bg-white/5 backdrop-blur-lg border border-white/10 hover:bg-white transition duration-500">
+
+                    <div class="h-56 bg-white flex items-center justify-center overflow-hidden">
+                        <img src="{% static 'images/azza.png' %}"
+                            class="h-full object-contain transition duration-500 group-hover:scale-110">
+                    </div>
+
+                    <div class="p-6 text-center group-hover:text-black">
+                        <h3 class="text-2xl font-semibold mb-4">Azaa Ventures</h3>
+
+                        <ul class="text-gray-300 group-hover:text-black">
+                            <li>FirstCry – Madannada, Kollam (2019)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card -->
+                <div data-aos="zoom-in"
+                    class="group rounded-2xl overflow-hidden bg-white/5 backdrop-blur-lg border border-white/10 hover:bg-white transition duration-500">
+
+                    <div class="h-56 bg-white flex items-center justify-center overflow-hidden">
+                        <img src="{% static 'images/yd.png' %}"
+                            class="h-full object-contain transition duration-500 group-hover:scale-110">
+                    </div>
+
+                    <div class="p-6 text-center group-hover:text-black">
+                        <h3 class="text-2xl font-semibold mb-4">Yfoods Global LLP</h3>
+
+                        <ul class="text-gray-300 group-hover:text-black">
+                            <li>YD Cafe – Sattva Knowledge City</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card -->
+                <div data-aos="zoom-in"
+                    class="group rounded-2xl overflow-hidden bg-white/5 backdrop-blur-lg border border-white/10 hover:bg-white transition duration-500">
+
+                    <div class="h-56 bg-white flex items-center justify-center overflow-hidden">
+                        <img src="https://images.seeklogo.com/logo-png/14/1/toniguy-logo-png_seeklogo-140823.png"
+                            class="h-full object-contain transition duration-500 group-hover:scale-110">
+                    </div>
+
+                    <div class="p-6 text-center group-hover:text-black">
+                        <h3 class="text-2xl font-semibold mb-4">Lifestyle Ventures</h3>
+
+                        <ul class="space-y-2 text-gray-300 group-hover:text-black">
+                            <li>Tony & Guy – Kollam</li>
+                            <li>Tony & Guy – Trivandrum</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- ================= MARK GROUP ================= -->
+    <section id="group" class="py-24 px-6 max-w-6xl mx-auto bg-gray-800">
+
+        <h2 class="text-3xl font-bold mb-10 text-center" data-aos="fade-up">
+            Mark Group
+        </h2>
+
+        <p class="text-gray-400 mb-12 text-center max-w-3xl mx-auto" data-aos="fade-up">
+            A diversified business group with over 60 years of legacy across multiple industries including
+            manufacturing, energy, exports, trading, education, and healthcare.
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+
+            <!-- Card -->
+            <div data-aos="zoom-in"
+                class="border border-white/10 p-6 rounded-xl text-center hover:bg-white hover:text-black transition duration-300">
+
+                <i class="fa-solid fa-seedling text-2xl mb-4"></i>
+                <h3 class="font-semibold">Associated Cashews</h3>
+            </div>
+
+            <div data-aos="zoom-in" data-aos-delay="100"
+                class="border border-white/10 p-6 rounded-xl text-center hover:bg-white hover:text-black transition duration-300">
+
+                <i class="fa-solid fa-industry text-2xl mb-4"></i>
+                <h3 class="font-semibold">Associated Polymers</h3>
+            </div>
+
+            <div data-aos="zoom-in" data-aos-delay="200"
+                class="border border-white/10 p-6 rounded-xl text-center hover:bg-white hover:text-black transition duration-300">
+
+                <i class="fa-solid fa-water text-2xl mb-4"></i>
+                <h3 class="font-semibold">Mark PVC Pipes</h3>
+            </div>
+
+            <div data-aos="zoom-in" data-aos-delay="300"
+                class="border border-white/10 p-6 rounded-xl text-center hover:bg-white hover:text-black transition duration-300">
+
+                <i class="fa-solid fa-gas-pump text-2xl mb-4"></i>
+                <h3 class="font-semibold">Mark Fuels (Jio-BP)</h3>
+            </div>
+
+            <div data-aos="zoom-in" data-aos-delay="400"
+                class="border border-white/10 p-6 rounded-xl text-center hover:bg-white hover:text-black transition duration-300">
+
+                <i class="fa-solid fa-graduation-cap text-2xl mb-4"></i>
+                <h3 class="font-semibold">Educational Institutions</h3>
+            </div>
+
+            <div data-aos="zoom-in" data-aos-delay="500"
+                class="border border-white/10 p-6 rounded-xl text-center hover:bg-white hover:text-black transition duration-300">
+
+                <i class="fa-solid fa-ship text-2xl mb-4"></i>
+                <h3 class="font-semibold">Exporting House</h3>
+            </div>
+
+            <div data-aos="zoom-in" data-aos-delay="600"
+                class="border border-white/10 p-6 rounded-xl text-center hover:bg-white hover:text-black transition duration-300">
+
+                <i class="fa-solid fa-handshake text-2xl mb-4"></i>
+                <h3 class="font-semibold">Trading Businesses</h3>
+            </div>
+
+            <div data-aos="zoom-in" data-aos-delay="700"
+                class="border border-white/10 p-6 rounded-xl text-center hover:bg-white hover:text-black transition duration-300">
+
+                <i class="fa-solid fa-hospital text-2xl mb-4"></i>
+                <h3 class="font-semibold">Healthcare Services</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ACHIEVEMENTS ================= -->
+    <section id="achievements"
+        class="relative py-24 px-6 bg-gradient-to-br from-gray-50 to-white text-black overflow-hidden">
+
+
+        <div class="relative max-w-6xl mx-auto text-center">
+
+            <!-- Heading -->
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 tracking-wide" data-aos="fade-up">
+                Achievements
+            </h2>
+
+            <p class="text-gray-600 max-w-2xl mx-auto mb-14" data-aos="fade-up">
+                A track record of building scalable ventures, forming strong brand partnerships,
+                and driving consistent business growth across multiple industries.
+            </p>
+
+            <!-- Cards -->
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Card 1 -->
+                <div data-aos="zoom-in"
+                    class="p-8 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition duration-500 border border-gray-100">
+
+                    <div class="text-4xl mb-4 text-blue-600">
+                        <i class="fas fa-store"></i>
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-3">Retail Expansion</h3>
+
+                    <p class="text-gray-600">
+                        Successfully launched and scaled multiple franchise outlets across Kerala.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div data-aos="zoom-in"
+                    class="p-8 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition duration-500 border border-gray-100">
+
+                    <div class="text-4xl mb-4 text-green-600">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-3">Brand Partnerships</h3>
+
+                    <p class="text-gray-600">
+                        Collaborated with nationally recognized brands to build high-performing ventures.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div data-aos="zoom-in"
+                    class="p-8 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition duration-500 border border-gray-100">
+
+                    <div class="text-4xl mb-4 text-purple-600">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-3">Business Growth</h3>
+
+                    <p class="text-gray-600">
+                        Driving expansion into the restaurant sector with a vision for nationwide growth.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Highlight -->
+            <div class="mt-16 p-8 rounded-2xl bg-black text-white shadow-xl" data-aos="fade-up">
+                <p class="text-lg leading-relaxed">
+                    Contributing to strategic leadership and long-term growth of the diversified
+                    <span class="font-semibold">Mark Group</span>, building a strong presence across industries.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="py-24 px-6 max-w-7xl mx-auto">
+
+        <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">
+            Get In Touch
+        </h2>
+
+        <div class="grid md:grid-cols-2 overflow-hidden rounded-2xl border border-white/10">
+
+            <!-- LEFT: Contact Info (Gray Background) -->
+            <div class="bg-white text-black p-10 space-y-6" data-aos="fade-right">
+
+                <p class="leading-relaxed">
+                    For business collaborations, partnerships, or investment opportunities, feel free to connect.
+                </p>
+
+                <!-- Contact Cards -->
+                <div class="space-y-4">
+
+                    <div
+                        class="flex items-center gap-4 border border-black/20 p-4 rounded-xl hover:bg-black hover:text-white transition">
+                        <i class="fa fa-map-marker-alt text-xl"></i>
+                        <span>Kollam, Kerala, India</span>
+                    </div>
+
+                    <a href="tel:+919645511111"
+                        class="flex items-center gap-4 border border-black/20 p-4 rounded-xl hover:bg-black hover:text-white transition">
+                        <i class="fa fa-phone text-xl"></i>
+                        <span>+91 9645511111</span>
+                    </a>
+
+                    <div
+                        class="flex items-center gap-4 border border-black/20 p-4 rounded-xl hover:bg-black hover:text-white transition">
+                        <i class="fa fa-envelope text-xl"></i>
+                        <span>adnan@mark-group.org</span>
+                    </div>
+
+                </div>
+
+                <!-- Social Media -->
+                <div class="flex gap-6 mt-6">
+                    <a href="#" class="text-xl hover:text-white transition">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-xl hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-xl hover:text-white transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- RIGHT: CTA (Black Background) -->
+            <div class="bg-gray-800 text-white p-10 flex flex-col justify-center text-center" data-aos="fade-left">
+
+                <h3 class="text-2xl font-semibold mb-4">
+                    Let’s Build Something Great
+                </h3>
+
+                <p class="text-gray-400 mb-6">
+                    Open to collaborations, business expansions, and strategic partnerships across industries.
+                </p>
+
+                <a href="mailto:adnan@mark-group.org"
+                    class="inline-block border border-white rounded-3xl px-6 py-3 hover:bg-white hover:text-black transition duration-300">
+                    Send Email
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+    {% include "footer.html" %}
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 500,
+            once: true
+        });
+    </script>
+
+</body>
+
+</html>
