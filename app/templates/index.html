@@ -10,7 +10,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -63,89 +65,199 @@
 
     <style>
         /* Only what Tailwind cannot express inline */
-        html { scroll-behavior: smooth; }
-        ::selection { background: #c9a84c; color: #000; }
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 2px; }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::selection {
+            background: #c9a84c;
+            color: #000;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c9a84c;
+            border-radius: 2px;
+        }
 
         /* Noise grain overlay */
         body::before {
             content: '';
-            position: fixed; inset: 0;
+            position: fixed;
+            inset: 0;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-            pointer-events: none; z-index: 9999; opacity: 0.4;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.4;
         }
 
         /* About image gold corner accents */
         .about-img-frame::before {
             content: '';
-            position: absolute; top: -16px; left: -16px;
-            width: 80px; height: 80px;
-            border-top: 1px solid #c9a84c; border-left: 1px solid #c9a84c;
-            pointer-events: none; z-index: 1;
+            position: absolute;
+            top: -16px;
+            left: -16px;
+            width: 80px;
+            height: 80px;
+            border-top: 1px solid #c9a84c;
+            border-left: 1px solid #c9a84c;
+            pointer-events: none;
+            z-index: 1;
         }
+
         .about-img-frame::after {
             content: '';
-            position: absolute; bottom: -16px; right: -16px;
-            width: 80px; height: 80px;
-            border-bottom: 1px solid #c9a84c; border-right: 1px solid #c9a84c;
-            pointer-events: none; z-index: 1;
+            position: absolute;
+            bottom: -16px;
+            right: -16px;
+            width: 80px;
+            height: 80px;
+            border-bottom: 1px solid #c9a84c;
+            border-right: 1px solid #c9a84c;
+            pointer-events: none;
+            z-index: 1;
         }
 
         /* Section label line */
-        .s-label { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
-        .s-label::before { content: ''; width: 28px; height: 1px; background: #c9a84c; flex-shrink: 0; }
-        .s-label-dark::before { background: #8a6f2e; }
+        .s-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .s-label::before {
+            content: '';
+            width: 28px;
+            height: 1px;
+            background: #c9a84c;
+            flex-shrink: 0;
+        }
+
+        .s-label-dark::before {
+            background: #8a6f2e;
+        }
 
         /* MARK ghost text */
         .mark-ghost::before {
             content: 'MARK';
-            position: absolute; top: 50%; left: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
             font-family: 'Cormorant Garamond', serif;
-            font-size: 22vw; font-weight: 700;
-            color: rgba(255,255,255,0.018);
-            pointer-events: none; white-space: nowrap;
-            letter-spacing: -0.05em; user-select: none;
+            font-size: 22vw;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.018);
+            pointer-events: none;
+            white-space: nowrap;
+            letter-spacing: -0.05em;
+            user-select: none;
         }
 
         /* Venture card gold underline */
-        .v-card { position: relative; overflow: hidden; }
+        .v-card {
+            position: relative;
+            overflow: hidden;
+        }
+
         .v-card::after {
-            content: ''; position: absolute; bottom: 0; left: 0;
-            width: 0; height: 2px; background: #c9a84c;
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #c9a84c;
             transition: width 0.5s;
         }
-        .v-card:hover::after { width: 100%; }
+
+        .v-card:hover::after {
+            width: 100%;
+        }
 
         /* Group item gold top bar */
-        .g-item { position: relative; overflow: hidden; }
-        .g-item::after {
-            content: ''; position: absolute; top: 0; left: 0;
-            width: 100%; height: 2px; background: #c9a84c;
-            transform: scaleX(0); transition: transform 0.4s;
+        .g-item {
+            position: relative;
+            overflow: hidden;
         }
-        .g-item:hover::after { transform: scaleX(1); }
+
+        .g-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #c9a84c;
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .g-item:hover::after {
+            transform: scaleX(1);
+        }
 
         /* Achievement card gold bottom bar */
-        .a-card { position: relative; overflow: hidden; }
-        .a-card::before {
-            content: ''; position: absolute; bottom: 0; left: 0;
-            width: 100%; height: 3px;
-            background: linear-gradient(to right, #c9a84c, #e8c87a);
-            transform: scaleX(0); transform-origin: left; transition: transform 0.5s;
+        .a-card {
+            position: relative;
+            overflow: hidden;
         }
-        .a-card:hover::before { transform: scaleX(1); }
+
+        .a-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #c9a84c, #e8c87a);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s;
+        }
+
+        .a-card:hover::before {
+            transform: scaleX(1);
+        }
 
         /* Scroll reveal */
-        .reveal        { opacity:0; transform:translateY(40px);  transition:opacity .8s ease,transform .8s ease; }
-        .reveal-left   { opacity:0; transform:translateX(-40px); transition:opacity .8s ease,transform .8s ease; }
-        .reveal-right  { opacity:0; transform:translateX(40px);  transition:opacity .8s ease,transform .8s ease; }
-        .reveal.visible, .reveal-left.visible, .reveal-right.visible { opacity:1; transform:none; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity .8s ease, transform .8s ease;
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity .8s ease, transform .8s ease;
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity .8s ease, transform .8s ease;
+        }
+
+        .reveal.visible,
+        .reveal-left.visible,
+        .reveal-right.visible {
+            opacity: 1;
+            transform: none;
+        }
 
         /* Scroll line transform-origin */
-        .scroll-line { transform-origin: bottom; }
+        .scroll-line {
+            transform-origin: bottom;
+        }
     </style>
 </head>
 
@@ -160,40 +272,57 @@
     <section id="home" class="relative h-screen min-h-[700px] flex items-end px-6 md:px-16 pb-32 overflow-hidden">
 
         <!-- BG zoom -->
-        <div class="absolute inset-0 bg-[url('https://img.freepik.com/free-photo/cheerful-young-caucasian-businessman_171337-727.jpg')] bg-cover bg-[center_20%] animate-heroZoom"></div>
+        <div class="absolute inset-0 bg-cover animate-heroZoom"
+            style="background-image: url('{% static 'images/banner.png' %}');">
+        </div>
 
         <!-- Desktop overlay -->
         <div class="absolute inset-0 hidden md:block"
-            style="background:linear-gradient(to right,rgba(10,10,10,.92) 38%,rgba(10,10,10,.3) 70%,transparent 100%),linear-gradient(to top,rgba(10,10,10,.95) 0%,transparent 50%)"></div>
+            style="background:linear-gradient(to right,rgba(10,10,10,.92) 38%,rgba(10,10,10,.3) 70%,transparent 100%),linear-gradient(to top,rgba(10,10,10,.95) 0%,transparent 50%)">
+        </div>
+
         <!-- Mobile overlay -->
         <div class="absolute inset-0 md:hidden"
-            style="background:linear-gradient(to bottom,rgba(10,10,10,.6) 0%,rgba(10,10,10,.95) 100%)"></div>
+            style="background:linear-gradient(to bottom,rgba(10,10,10,.6) 0%,rgba(10,10,10,.95) 100%)">
+        </div>
 
         <!-- Content -->
         <div class="relative z-10 max-w-2xl">
             <div class="animate-fadeUp1 flex items-center gap-4 mb-6">
                 <div class="w-10 h-px bg-gold flex-shrink-0"></div>
-                <span class="text-gold text-[.7rem] tracking-[.25em] uppercase font-medium">Kerala, India · Managing Partner</span>
+                <span class="text-gold text-[.7rem] tracking-[.25em] uppercase font-medium">
+                    Kerala, India · Managing Partner
+                </span>
             </div>
-            <h1 class="animate-fadeUp2 font-display font-light leading-[1.05] tracking-tight mb-6 text-[clamp(3.5rem,7vw,6.5rem)]">
-                Adhinan<br /><em class="italic text-gold-light">Salam</em>
+
+            <h1
+                class="animate-fadeUp2 font-display font-light leading-[1.05] tracking-tight mb-6 text-[clamp(3.5rem,7vw,6.5rem)]">
+                Adhinan<br />
+                <em class="italic text-gold-light">Salam</em>
             </h1>
+
             <p class="animate-fadeUp3 text-[.92rem] text-white/45 tracking-wide mb-10">
-                Entrepreneur &nbsp;·&nbsp; Managing Partner &nbsp;·&nbsp; Investor<br />
+                Entrepreneur · Managing Partner · Investor<br />
                 Retail · Hospitality · Lifestyle Sectors
             </p>
+
             <a href="#about"
                 class="animate-fadeUp4 inline-flex items-center gap-3 border border-gold text-gold text-[.72rem] tracking-[.2em] uppercase px-8 py-3.5 hover:bg-gold hover:text-black transition-all duration-300">
-                Explore Profile <i class="fas fa-arrow-right text-[.65rem]"></i>
+                Explore Profile
+                <i class="fas fa-arrow-right text-[.65rem]"></i>
             </a>
         </div>
 
         <!-- Scroll indicator -->
-        <div class="absolute right-14 bottom-16 z-10 hidden md:flex flex-col items-center gap-3 text-white/45 text-[.65rem] tracking-[.2em] uppercase">
+        <div
+            class="absolute right-14 bottom-16 z-10 hidden md:flex flex-col items-center gap-3 text-white/45 text-[.65rem] tracking-[.2em] uppercase">
             <div class="scroll-line w-px h-16 bg-gradient-to-b from-transparent to-gold animate-scrollLine"></div>
             <span>Scroll</span>
         </div>
+
     </section>
+
+
 
 
     <!-- ════════════════════════════════════
@@ -208,7 +337,8 @@
                     alt="Adhinan Salam"
                     class="w-full h-[400px] md:h-[560px] object-cover object-top grayscale-[20%] hover:grayscale-0 transition-all duration-500 block" />
                 <div class="absolute -bottom-6 left-6 bg-gold text-black px-6 py-4 z-10">
-                    <div class="font-display text-[2rem] font-semibold leading-none">15<sup class="text-base">+</sup></div>
+                    <div class="font-display text-[2rem] font-semibold leading-none">15<sup class="text-base">+</sup>
+                    </div>
                     <div class="text-[.65rem] tracking-[.15em] uppercase mt-0.5">Years Experience</div>
                 </div>
             </div>
@@ -234,20 +364,25 @@
 
                 <!-- Stats -->
                 <div class="grid grid-cols-2" style="gap:1px;background:rgba(255,255,255,.08)">
-                    <div class="bg-dark2 px-7 py-6 hover:bg-[rgba(201,168,76,.15)] transition-colors duration-300 cursor-default border border-white/[.08]">
+                    <div
+                        class="bg-dark2 px-7 py-6 hover:bg-[rgba(201,168,76,.15)] transition-colors duration-300 cursor-default border border-white/[.08]">
                         <div class="font-display text-[2.2rem] font-semibold text-gold leading-none mb-1">6+</div>
                         <div class="text-[.7rem] tracking-[.15em] uppercase text-white/45">Business Ventures</div>
                     </div>
-                    <div class="bg-dark2 px-7 py-6 hover:bg-[rgba(201,168,76,.15)] transition-colors duration-300 cursor-default border border-white/[.08]">
+                    <div
+                        class="bg-dark2 px-7 py-6 hover:bg-[rgba(201,168,76,.15)] transition-colors duration-300 cursor-default border border-white/[.08]">
                         <div class="font-display text-[2.2rem] font-semibold text-gold leading-none mb-1">60+</div>
                         <div class="text-[.7rem] tracking-[.15em] uppercase text-white/45">Years Legacy</div>
                     </div>
-                    <div class="bg-dark2 px-7 py-6 hover:bg-[rgba(201,168,76,.15)] transition-colors duration-300 cursor-default border border-white/[.08]">
+                    <div
+                        class="bg-dark2 px-7 py-6 hover:bg-[rgba(201,168,76,.15)] transition-colors duration-300 cursor-default border border-white/[.08]">
                         <div class="font-display text-[2.2rem] font-semibold text-gold leading-none mb-1">3+</div>
                         <div class="text-[.7rem] tracking-[.15em] uppercase text-white/45">Industries</div>
                     </div>
-                    <div class="bg-dark2 px-7 py-6 hover:bg-[rgba(201,168,76,.15)] transition-colors duration-300 cursor-default border border-white/[.08]">
-                        <div class="font-display text-[2.2rem] font-semibold text-gold leading-none mb-1">Pan India</div>
+                    <div
+                        class="bg-dark2 px-7 py-6 hover:bg-[rgba(201,168,76,.15)] transition-colors duration-300 cursor-default border border-white/[.08]">
+                        <div class="font-display text-[2.2rem] font-semibold text-gold leading-none mb-1">Pan India
+                        </div>
                         <div class="text-[.7rem] tracking-[.15em] uppercase text-white/45">Expansion Vision</div>
                     </div>
                 </div>
@@ -273,7 +408,8 @@
                     </h2>
                 </div>
                 <p class="max-w-sm text-white/45 text-[.88rem] md:text-right md:mb-2">
-                    A curated portfolio of franchise brands and homegrown businesses across retail, F&amp;B, and lifestyle.
+                    A curated portfolio of franchise brands and homegrown businesses across retail, F&amp;B, and
+                    lifestyle.
                 </p>
             </div>
 
@@ -282,63 +418,91 @@
 
                 <div class="v-card bg-dark2 hover:bg-dark3 transition-colors duration-500 reveal">
                     <div class="flex flex-col md:flex-row md:h-[220px]">
-                        <div class="w-full md:w-48 flex-shrink-0 bg-white flex items-center justify-center p-6 h-28 md:h-auto">
+                        <div
+                            class="w-full md:w-48 flex-shrink-0 bg-white flex items-center justify-center p-6 h-28 md:h-auto">
                             <img src="https://cdn.cookielaw.org/logos/396992c7-1022-4c36-82e8-f180e6324448/0196f248-6fbc-79b9-9406-ed469b98d263/93529cb0-324c-41df-8473-e582e23719d6/FI3618_Zudio_Beauty_Logo_Adapts_20x10in_copy.jpg"
                                 alt="Zudio" class="max-h-16 max-w-[100px] object-contain" />
                         </div>
                         <div class="flex flex-col justify-center px-8 py-6 flex-1">
-                            <div class="font-display text-[2.8rem] font-light text-white/[.06] leading-none mb-2">01</div>
-                            <div class="font-display text-[1.4rem] font-semibold tracking-wide mb-3">Capital Ventures</div>
+                            <div class="font-display text-[2.8rem] font-light text-white/[.06] leading-none mb-2">01
+                            </div>
+                            <div class="font-display text-[1.4rem] font-semibold tracking-wide mb-3">Capital Ventures
+                            </div>
                             <ul class="space-y-1">
-                                <li class="text-[.8rem] text-white/45 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-gold">Zudio – Edapally, Kochi (2024)</li>
-                                <li class="text-[.8rem] text-white/45 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-gold">Zudio – Changaramkulam (2023)</li>
+                                <li
+                                    class="text-[.8rem] text-white/45 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-gold">
+                                    Zudio – Edapally, Kochi (2024)</li>
+                                <li
+                                    class="text-[.8rem] text-white/45 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-gold">
+                                    Zudio – Changaramkulam (2023)</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <div class="v-card bg-dark2 hover:bg-dark3 transition-colors duration-500 reveal" style="transition-delay:.1s">
+                <div class="v-card bg-dark2 hover:bg-dark3 transition-colors duration-500 reveal"
+                    style="transition-delay:.1s">
                     <div class="flex flex-col md:flex-row md:h-[220px]">
-                        <div class="w-full md:w-48 flex-shrink-0 bg-white flex items-center justify-center p-6 h-28 md:h-auto">
-                            <img src="{% static 'images/Firstcry.webp' %}" alt="FirstCry" class="max-h-16 max-w-[100px] object-contain" />
+                        <div
+                            class="w-full md:w-48 flex-shrink-0 bg-white flex items-center justify-center p-6 h-28 md:h-auto">
+                            <img src="{% static 'images/Firstcry.webp' %}" alt="FirstCry"
+                                class="max-h-16 max-w-[100px] object-contain" />
                         </div>
                         <div class="flex flex-col justify-center px-8 py-6 flex-1">
-                            <div class="font-display text-[2.8rem] font-light text-white/[.06] leading-none mb-2">02</div>
+                            <div class="font-display text-[2.8rem] font-light text-white/[.06] leading-none mb-2">02
+                            </div>
                             <div class="font-display text-[1.4rem] font-semibold tracking-wide mb-3">Azaa Ventures</div>
                             <ul class="space-y-1">
-                                <li class="text-[.8rem] text-white/45 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-gold">FirstCry – Madannada, Kollam (2019)</li>
+                                <li
+                                    class="text-[.8rem] text-white/45 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-gold">
+                                    FirstCry – Madannada, Kollam (2019)</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <div class="v-card bg-dark2 hover:bg-dark3 transition-colors duration-500 reveal" style="transition-delay:.2s">
+                <div class="v-card bg-dark2 hover:bg-dark3 transition-colors duration-500 reveal"
+                    style="transition-delay:.2s">
                     <div class="flex flex-col md:flex-row md:h-[220px]">
-                        <div class="w-full md:w-48 flex-shrink-0 bg-white flex items-center justify-center p-6 h-28 md:h-auto">
-                            <img src="{% static 'images/yd.png' %}" alt="YD Cafe" class="max-h-16 max-w-[100px] object-contain" />
+                        <div
+                            class="w-full md:w-48 flex-shrink-0 bg-white flex items-center justify-center p-6 h-28 md:h-auto">
+                            <img src="{% static 'images/yd.png' %}" alt="YD Cafe"
+                                class="max-h-16 max-w-[100px] object-contain" />
                         </div>
                         <div class="flex flex-col justify-center px-8 py-6 flex-1">
-                            <div class="font-display text-[2.8rem] font-light text-white/[.06] leading-none mb-2">03</div>
-                            <div class="font-display text-[1.4rem] font-semibold tracking-wide mb-3">Yfoods Global LLP</div>
+                            <div class="font-display text-[2.8rem] font-light text-white/[.06] leading-none mb-2">03
+                            </div>
+                            <div class="font-display text-[1.4rem] font-semibold tracking-wide mb-3">Yfoods Global LLP
+                            </div>
                             <ul class="space-y-1">
-                                <li class="text-[.8rem] text-white/45 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-gold">YD Cafe – Sattva Knowledge City</li>
+                                <li
+                                    class="text-[.8rem] text-white/45 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-gold">
+                                    YD Cafe – Sattva Knowledge City</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <div class="v-card bg-dark2 hover:bg-dark3 transition-colors duration-500 reveal" style="transition-delay:.3s">
+                <div class="v-card bg-dark2 hover:bg-dark3 transition-colors duration-500 reveal"
+                    style="transition-delay:.3s">
                     <div class="flex flex-col md:flex-row md:h-[220px]">
-                        <div class="w-full md:w-48 flex-shrink-0 bg-white flex items-center justify-center p-6 h-28 md:h-auto">
+                        <div
+                            class="w-full md:w-48 flex-shrink-0 bg-white flex items-center justify-center p-6 h-28 md:h-auto">
                             <img src="https://images.seeklogo.com/logo-png/14/1/toniguy-logo-png_seeklogo-140823.png"
                                 alt="Toni & Guy" class="max-h-16 max-w-[100px] object-contain" />
                         </div>
                         <div class="flex flex-col justify-center px-8 py-6 flex-1">
-                            <div class="font-display text-[2.8rem] font-light text-white/[.06] leading-none mb-2">04</div>
-                            <div class="font-display text-[1.4rem] font-semibold tracking-wide mb-3">Lifestyle Ventures</div>
+                            <div class="font-display text-[2.8rem] font-light text-white/[.06] leading-none mb-2">04
+                            </div>
+                            <div class="font-display text-[1.4rem] font-semibold tracking-wide mb-3">Lifestyle Ventures
+                            </div>
                             <ul class="space-y-1">
-                                <li class="text-[.8rem] text-white/45 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-gold">Tony &amp; Guy – Kollam</li>
-                                <li class="text-[.8rem] text-white/45 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-gold">Tony &amp; Guy – Trivandrum</li>
+                                <li
+                                    class="text-[.8rem] text-white/45 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-gold">
+                                    Tony &amp; Guy – Kollam</li>
+                                <li
+                                    class="text-[.8rem] text-white/45 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-gold">
+                                    Tony &amp; Guy – Trivandrum</li>
                             </ul>
                         </div>
                     </div>
@@ -372,35 +536,43 @@
 
             <div class="grid grid-cols-2 md:grid-cols-4" style="gap:2px;background:rgba(255,255,255,.08)">
 
-                <div class="g-item bg-dark text-center px-6 py-8 hover:bg-black hover:-translate-y-1 transition-all duration-300 cursor-default reveal">
+                <div
+                    class="g-item bg-dark text-center px-6 py-8 hover:bg-black hover:-translate-y-1 transition-all duration-300 cursor-default reveal">
                     <div class="text-gold text-2xl mb-4 opacity-80"><i class="fa-solid fa-seedling"></i></div>
                     <h3 class="font-display font-semibold tracking-wide text-[1rem]">Associated Cashews</h3>
                 </div>
-                <div class="g-item bg-dark text-center px-6 py-8 hover:bg-black hover:-translate-y-1 transition-all duration-300 cursor-default reveal" style="transition-delay:.07s">
+                <div class="g-item bg-dark text-center px-6 py-8 hover:bg-black hover:-translate-y-1 transition-all duration-300 cursor-default reveal"
+                    style="transition-delay:.07s">
                     <div class="text-gold text-2xl mb-4 opacity-80"><i class="fa-solid fa-industry"></i></div>
                     <h3 class="font-display font-semibold tracking-wide text-[1rem]">Associated Polymers</h3>
                 </div>
-                <div class="g-item bg-dark text-center px-6 py-8 hover:bg-black hover:-translate-y-1 transition-all duration-300 cursor-default reveal" style="transition-delay:.14s">
+                <div class="g-item bg-dark text-center px-6 py-8 hover:bg-black hover:-translate-y-1 transition-all duration-300 cursor-default reveal"
+                    style="transition-delay:.14s">
                     <div class="text-gold text-2xl mb-4 opacity-80"><i class="fa-solid fa-water"></i></div>
                     <h3 class="font-display font-semibold tracking-wide text-[1rem]">Mark PVC Pipes</h3>
                 </div>
-                <div class="g-item bg-dark text-center px-6 py-8 hover:bg-black hover:-translate-y-1 transition-all duration-300 cursor-default reveal" style="transition-delay:.21s">
+                <div class="g-item bg-dark text-center px-6 py-8 hover:bg-black hover:-translate-y-1 transition-all duration-300 cursor-default reveal"
+                    style="transition-delay:.21s">
                     <div class="text-gold text-2xl mb-4 opacity-80"><i class="fa-solid fa-gas-pump"></i></div>
                     <h3 class="font-display font-semibold tracking-wide text-[1rem]">Mark Fuels (Jio-BP)</h3>
                 </div>
-                <div class="g-item bg-dark text-center px-6 py-8 hover:bg-black hover:-translate-y-1 transition-all duration-300 cursor-default reveal" style="transition-delay:.28s">
+                <div class="g-item bg-dark text-center px-6 py-8 hover:bg-black hover:-translate-y-1 transition-all duration-300 cursor-default reveal"
+                    style="transition-delay:.28s">
                     <div class="text-gold text-2xl mb-4 opacity-80"><i class="fa-solid fa-graduation-cap"></i></div>
                     <h3 class="font-display font-semibold tracking-wide text-[1rem]">Educational Institutions</h3>
                 </div>
-                <div class="g-item bg-dark text-center px-6 py-8 hover:bg-black hover:-translate-y-1 transition-all duration-300 cursor-default reveal" style="transition-delay:.35s">
+                <div class="g-item bg-dark text-center px-6 py-8 hover:bg-black hover:-translate-y-1 transition-all duration-300 cursor-default reveal"
+                    style="transition-delay:.35s">
                     <div class="text-gold text-2xl mb-4 opacity-80"><i class="fa-solid fa-ship"></i></div>
                     <h3 class="font-display font-semibold tracking-wide text-[1rem]">Exporting House</h3>
                 </div>
-                <div class="g-item bg-dark text-center px-6 py-8 hover:bg-black hover:-translate-y-1 transition-all duration-300 cursor-default reveal" style="transition-delay:.42s">
+                <div class="g-item bg-dark text-center px-6 py-8 hover:bg-black hover:-translate-y-1 transition-all duration-300 cursor-default reveal"
+                    style="transition-delay:.42s">
                     <div class="text-gold text-2xl mb-4 opacity-80"><i class="fa-solid fa-handshake"></i></div>
                     <h3 class="font-display font-semibold tracking-wide text-[1rem]">Trading Businesses</h3>
                 </div>
-                <div class="g-item bg-dark text-center px-6 py-8 hover:bg-black hover:-translate-y-1 transition-all duration-300 cursor-default reveal" style="transition-delay:.49s">
+                <div class="g-item bg-dark text-center px-6 py-8 hover:bg-black hover:-translate-y-1 transition-all duration-300 cursor-default reveal"
+                    style="transition-delay:.49s">
                     <div class="text-gold text-2xl mb-4 opacity-80"><i class="fa-solid fa-hospital"></i></div>
                     <h3 class="font-display font-semibold tracking-wide text-[1rem]">Healthcare Services</h3>
                 </div>
@@ -420,7 +592,8 @@
                 <div class="s-label s-label-dark">
                     <span class="text-[#8a6f2e] text-[.65rem] tracking-[.25em] uppercase font-medium">Recognition</span>
                 </div>
-                <h2 class="font-display font-light leading-[1.1] tracking-tight text-dark text-[clamp(2.2rem,5vw,3.8rem)]">
+                <h2
+                    class="font-display font-light leading-[1.1] tracking-tight text-dark text-[clamp(2.2rem,5vw,3.8rem)]">
                     Track Record of<br /><em class="italic text-[#8a6f2e]">Excellence</em>
                 </h2>
                 <p class="mt-4 max-w-[560px] text-black/55 text-[.92rem]">
@@ -432,32 +605,41 @@
             <div class="grid grid-cols-1 md:grid-cols-3 mb-0.5" style="gap:2px;background:rgba(0,0,0,.1)">
 
                 <div class="a-card bg-white hover:bg-[#f8f4ee] transition-colors duration-300 p-10 reveal">
-                    <div class="w-12 h-12 border border-black/10 flex items-center justify-center mb-6 text-[#8a6f2e] text-lg">
+                    <div
+                        class="w-12 h-12 border border-black/10 flex items-center justify-center mb-6 text-[#8a6f2e] text-lg">
                         <i class="fas fa-store"></i>
                     </div>
                     <h3 class="font-display font-semibold text-[1.35rem] tracking-wide mb-3">Retail Expansion</h3>
-                    <p class="text-[.88rem] text-black/55 leading-relaxed">Successfully launched and scaled multiple franchise outlets across Kerala, building strong regional presence.</p>
+                    <p class="text-[.88rem] text-black/55 leading-relaxed">Successfully launched and scaled multiple
+                        franchise outlets across Kerala, building strong regional presence.</p>
                 </div>
 
-                <div class="a-card bg-white hover:bg-[#f8f4ee] transition-colors duration-300 p-10 reveal" style="transition-delay:.1s">
-                    <div class="w-12 h-12 border border-black/10 flex items-center justify-center mb-6 text-[#8a6f2e] text-lg">
+                <div class="a-card bg-white hover:bg-[#f8f4ee] transition-colors duration-300 p-10 reveal"
+                    style="transition-delay:.1s">
+                    <div
+                        class="w-12 h-12 border border-black/10 flex items-center justify-center mb-6 text-[#8a6f2e] text-lg">
                         <i class="fas fa-handshake"></i>
                     </div>
                     <h3 class="font-display font-semibold text-[1.35rem] tracking-wide mb-3">Brand Partnerships</h3>
-                    <p class="text-[.88rem] text-black/55 leading-relaxed">Collaborated with nationally recognized brands to build high-performing, consumer-driven ventures.</p>
+                    <p class="text-[.88rem] text-black/55 leading-relaxed">Collaborated with nationally recognized
+                        brands to build high-performing, consumer-driven ventures.</p>
                 </div>
 
-                <div class="a-card bg-white hover:bg-[#f8f4ee] transition-colors duration-300 p-10 reveal" style="transition-delay:.2s">
-                    <div class="w-12 h-12 border border-black/10 flex items-center justify-center mb-6 text-[#8a6f2e] text-lg">
+                <div class="a-card bg-white hover:bg-[#f8f4ee] transition-colors duration-300 p-10 reveal"
+                    style="transition-delay:.2s">
+                    <div
+                        class="w-12 h-12 border border-black/10 flex items-center justify-center mb-6 text-[#8a6f2e] text-lg">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3 class="font-display font-semibold text-[1.35rem] tracking-wide mb-3">Business Growth</h3>
-                    <p class="text-[.88rem] text-black/55 leading-relaxed">Driving expansion into the restaurant sector with a bold vision for Pan-India nationwide growth.</p>
+                    <p class="text-[.88rem] text-black/55 leading-relaxed">Driving expansion into the restaurant sector
+                        with a bold vision for Pan-India nationwide growth.</p>
                 </div>
 
             </div>
 
-            <div class="bg-dark text-white flex flex-col md:flex-row items-center justify-between gap-6 px-10 py-12 reveal">
+            <div
+                class="bg-dark text-white flex flex-col md:flex-row items-center justify-between gap-6 px-10 py-12 reveal">
                 <p class="font-display font-light italic text-[1.35rem] leading-relaxed">
                     Contributing to the strategic leadership and long-term growth of the diversified
                     <span class="text-gold font-semibold not-italic">Mark Group</span>,
@@ -492,7 +674,8 @@
                     <p class="text-white/45 text-[.9rem] mb-10 max-w-sm">
                         For business collaborations, partnerships, or investment opportunities, feel free to connect.
                     </p>
-                    <div class="flex items-center gap-5 border border-white/[.08] px-6 py-5 mb-3 hover:border-gold hover:bg-[rgba(201,168,76,.15)] transition-all duration-300 text-[.88rem]">
+                    <div
+                        class="flex items-center gap-5 border border-white/[.08] px-6 py-5 mb-3 hover:border-gold hover:bg-[rgba(201,168,76,.15)] transition-all duration-300 text-[.88rem]">
                         <i class="fa fa-map-marker-alt text-gold w-4 text-center flex-shrink-0"></i>
                         <span>Kollam, Kerala, India</span>
                     </div>
@@ -501,18 +684,22 @@
                         <i class="fa fa-phone text-gold w-4 text-center flex-shrink-0"></i>
                         <span>+91 96455 11111</span>
                     </a>
-                    <div class="flex items-center gap-5 border border-white/[.08] px-6 py-5 mb-3 hover:border-gold hover:bg-[rgba(201,168,76,.15)] transition-all duration-300 text-[.88rem]">
+                    <div
+                        class="flex items-center gap-5 border border-white/[.08] px-6 py-5 mb-3 hover:border-gold hover:bg-[rgba(201,168,76,.15)] transition-all duration-300 text-[.88rem]">
                         <i class="fa fa-envelope text-gold w-4 text-center flex-shrink-0"></i>
                         <span>adnan@mark-group.org</span>
                     </div>
                     <div class="flex gap-3 mt-8">
-                        <a href="#" class="w-10 h-10 border border-white/[.08] flex items-center justify-center text-white/45 hover:border-gold hover:text-gold hover:bg-[rgba(201,168,76,.15)] transition-all duration-300">
+                        <a href="#"
+                            class="w-10 h-10 border border-white/[.08] flex items-center justify-center text-white/45 hover:border-gold hover:text-gold hover:bg-[rgba(201,168,76,.15)] transition-all duration-300">
                             <i class="fab fa-linkedin-in text-sm"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 border border-white/[.08] flex items-center justify-center text-white/45 hover:border-gold hover:text-gold hover:bg-[rgba(201,168,76,.15)] transition-all duration-300">
+                        <a href="#"
+                            class="w-10 h-10 border border-white/[.08] flex items-center justify-center text-white/45 hover:border-gold hover:text-gold hover:bg-[rgba(201,168,76,.15)] transition-all duration-300">
                             <i class="fab fa-instagram text-sm"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 border border-white/[.08] flex items-center justify-center text-white/45 hover:border-gold hover:text-gold hover:bg-[rgba(201,168,76,.15)] transition-all duration-300">
+                        <a href="#"
+                            class="w-10 h-10 border border-white/[.08] flex items-center justify-center text-white/45 hover:border-gold hover:text-gold hover:bg-[rgba(201,168,76,.15)] transition-all duration-300">
                             <i class="fab fa-twitter text-sm"></i>
                         </a>
                     </div>
@@ -555,4 +742,5 @@
     </script>
 
 </body>
+
 </html>
